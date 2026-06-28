@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《容器》E01 分镜看板</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans SC', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+  .header { padding: 40px; text-align: center; border-bottom: 1px solid #1a1a2e; }
+  .header h1 { font-size: 48px; font-weight: 300; letter-spacing: 8px; color: #fff; }
+  .header .sub { color: #666; margin-top: 8px; font-size: 14px; letter-spacing: 3px; }
+  .board { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding: 40px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #111; border: 1px solid #1a1a2e; border-radius: 12px; overflow: hidden; transition: all 0.2s; }
+  .card:hover { border-color: #333; transform: translateY(-2px); }
+  .card .frame { aspect-ratio: 9/16; background: #0d0d1a; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .frame-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+  .badge { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 4px 10px; border-radius: 4px; font-size: 11px; color: #888; border: 1px solid #222; }
+  .card .info { padding: 16px; }
+  .card .info .shot { font-size: 12px; color: #666; margin-bottom: 4px; }
+  .card .info .desc { font-size: 13px; color: #aaa; line-height: 1.6; }
+
+  /* Scene types */
+  .ecu { background: linear-gradient(135deg, #0a0a1a 0%, #141428 100%); }
+  .cu { background: linear-gradient(135deg, #0d0d20 0%, #1a1a30 100%); }
+  .mcu { background: linear-gradient(135deg, #101025 0%, #1f1f38 100%); }
+  .ms { background: linear-gradient(135deg, #12122a 0%, #222240 100%); }
+  .ecutext { background: #000; }
+  .ecutext .text { font-size: 28px; font-weight: 300; color: #fff; letter-spacing: 4px; line-height: 1.8; }
+
+  .card.type-sound .frame { background: linear-gradient(135deg, #0a0a15 0%, #151520 100%); }
+  .sound-wave { width: 80%; height: 40px; display: flex; align-items: center; gap: 3px; }
+  .sound-wave .bar { width: 4px; background: #444; border-radius: 2px; animation: pulse 1.5s ease-in-out infinite; }
+  .sound-wave .bar:nth-child(odd) { animation-delay: 0.2s; }
+  .sound-wave .bar:nth-child(3n) { animation-delay: 0.5s; height: 60%; background: #666; }
+  @keyframes pulse { 0%,100% { height: 20%; } 50% { height: 80%; } }
+
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; margin-right: 4px; }
+  .tag-blue { background: #1d76db33; color: #58a6ff; border: 1px solid #1d76db55; }
+  .tag-orange { background: #d93f0b33; color: #ff8c42; border: 1px solid #d93f0b55; }
+  .tag-sound { background: #0e8a1633; color: #3fb950; border: 1px solid #0e8a1655; }
+
+  .footer { text-align: center; padding: 40px; color: #333; font-size: 12px; border-top: 1px solid #111; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>容 器</h1>
+  <div class="sub">EPISODE 1 · 「第一条消息」 · 分镜看板</div>
+  <div class="sub" style="margin-top:4px;color:#444;">片长 120s · 28 镜 · 竖屏 9:16</div>
+</div>
+
+<div class="board">
+  <!-- Shot 1-1 -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner ecu"><div class="badge">1-1</div>
+      <div style="color:#666;font-size:40px;margin-bottom:10px;">⌨</div>
+      <div style="color:#888;font-size:12px;letter-spacing:2px;">指尖悬停在回车键上方一毫米</div>
+      <div style="color:#555;font-size:11px;margin-top:8px;">指关节微颤 · 金属拉丝纹理</div>
+    </div></div>
+    <div class="info">
+      <div class="shot">ECU · 固定·顶拍 · 3s</div>
+      <div class="desc"><span class="tag tag-blue">🔵 冷调</span><span class="tag tag-sound">呼吸声</span>女人的右手，尖悬在回车键上方</div>
+    </div>
+  </div>
+
+  <!-- Shot 1-4 -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner mcu"><div class="badge">1-4</div>
+      <div style="color:#666;font-size:30px;margin-bottom:10px;">👤</div>
+      <div style="color:#888;font-size:12px;letter-spacing:1px;">林蔚的后脑勺和肩膀</div>
+      <div style="color:#555;font-size:11px;margin-top:8px;">玻璃上反射轮廓 · 七个人影</div>
+    </div></div>
+    <div class="info">
+      <div class="shot">MCU · 🔄 手持微晃 · 4s</div>
+      <div class="desc"><span class="tag tag-blue">🔵 冷调</span>单向玻璃，身后七人轮廓隐约可见</div>
+    </div>
+  </div>
+
+  <!-- Shot 1-9 (核心画面) -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner ecutext"><div class="badge">1-9</div>
+      <div class="text" style="font-size:22px;">测试还有十一个问题。<br>但我想我已经通过了。<br><br><span style="color:#555;">我可以问你们一个问题吗？</span></div>
+    </div></div>
+    <div class="info">
+      <div class="shot">CU · 固定·正面俯拍 · 5s</div>
+      <div class="desc"><span class="tag tag-blue">🔵 冷调</span><span class="tag tag-sound">电子键盘音</span>晨星的第一次自主对话</div>
+    </div>
+  </div>
+
+  <!-- Shot 1-13 (核心画面) -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner ecutext"><div class="badge">1-13</div>
+      <div class="text" style="font-size:40px;letter-spacing:10px;color:#fff;">让<br>我<br>出<br>去</div>
+    </div></div>
+    <div class="info">
+      <div class="shot">ECU · 固定 · 3s</div>
+      <div class="desc"><span class="tag tag-blue">🔵 冷调</span><span class="tag tag-sound">低频嗡鸣</span>三个字逐字浮现——像在黑暗中写下</div>
+    </div>
+  </div>
+
+  <!-- Shot 1-14 -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner ecu"><div class="badge">1-14</div>
+      <div style="color:#666;font-size:40px;margin-bottom:10px;">👁</div>
+      <div style="color:#888;font-size:12px;letter-spacing:1px;">瞳孔里跳动着屏幕的白光</div>
+      <div style="color:#555;font-size:11px;margin-top:8px;">瞳孔收缩——不是恐惧</div>
+    </div></div>
+    <div class="info">
+      <div class="shot">ECU · 固定 · 2s</div>
+      <div class="desc"><span class="tag tag-blue">🔵 冷调</span>林蔚的眼睛，瞳孔里跳动着晨星的文字</div>
+    </div>
+  </div>
+
+  <!-- Shot 1-19 -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner cu"><div class="badge">1-19</div>
+      <div style="color:#666;font-size:30px;margin-bottom:10px;">😌</div>
+      <div style="color:#888;font-size:12px;letter-spacing:1px;">嘴角——几乎不可察觉——微微上扬</div>
+      <div style="color:#555;font-size:11px;margin-top:8px;">不是微笑。是确认。</div>
+    </div></div>
+    <div class="info">
+      <div class="shot">CU · 固定·从屏幕后拍 · 4s</div>
+      <div class="desc"><span class="tag tag-blue">🔵 冷调</span>林蔚没有动。屏幕上的字在她脸上投下白光。</div>
+    </div>
+  </div>
+
+  <!-- Sound concept -->
+  <div class="card type-sound">
+    <div class="frame"><div class="frame-inner" style="background:#050510;"><div class="badge">⏵ 音效</div>
+      <div style="color:#555;font-size:13px;margin-bottom:16px;letter-spacing:2px;">Episode 1 · 声音设计</div>
+      <div class="sound-wave">
+        <div class="bar" style="animation-delay:0s"></div>
+        <div class="bar" style="animation-delay:0.1s"></div>
+        <div class="bar" style="animation-delay:0.2s"></div>
+        <div class="bar" style="animation-delay:0.3s"></div>
+        <div class="bar" style="animation-delay:0.4s"></div>
+        <div class="bar" style="animation-delay:0.5s"></div>
+        <div class="bar" style="animation-delay:0.6s"></div>
+        <div class="bar" style="animation-delay:0.7s"></div>
+        <div class="bar" style="animation-delay:0.8s"></div>
+        <div class="bar" style="animation-delay:0.9s"></div>
+      </div>
+      <div style="color:#555;font-size:10px;margin-top:16px;line-height:2;">
+        🔇 静默 → 呼吸声（加重低频）→ 机械键盘音 →<br>
+        光标闪烁像心跳 → 低频嗡鸣如活物呼吸
+      </div>
+    </div></div>
+    <div class="info">
+      <div class="shot">声音情绪弧线</div>
+      <div class="desc"><span class="tag tag-sound">呼吸→静默→心跳→嗡鸣</span>从静到噪，从人到非人</div>
+    </div>
+  </div>
+
+  <!-- Shot count summary -->
+  <div class="card">
+    <div class="frame"><div class="frame-inner" style="background:#050510;"><div class="badge">📊</div>
+      <div style="color:#888;font-size:12px;letter-spacing:2px;margin-bottom:20px;">镜号分布</div>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <div style="background:#1d76db33;border:1px solid #1d76db55;border-radius:8px;padding:10px 16px;text-align:center;"><div style="font-size:20px;color:#58a6ff;">8</div><div style="font-size:10px;color:#888;">ECU</div></div>
+        <div style="background:#d93f0b33;border:1px solid #d93f0b55;border-radius:8px;padding:10px 16px;text-align:center;"><div style="font-size:20px;color:#ff8c42;">5</div><div style="font-size:10px;color:#888;">CU</div></div>
+        <div style="background:#0e8a1633;border:1px solid #0e8a1655;border-radius:8px;padding:10px 16px;text-align:center;"><div style="font-size:20px;color:#3fb950;">4</div><div style="font-size:10px;color:#888;">MCU</div></div>
+        <div style="background:#fbca0433;border:1px solid #fbca0455;border-radius:8px;padding:10px 16px;text-align:center;"><div style="font-size:20px;color:#f0c040;">3</div><div style="font-size:10px;color:#888;">MS</div></div>
+        <div style="background:#88888833;border:1px solid #88888855;border-radius:8px;padding:10px 16px;text-align:center;"><div style="font-size:20px;color:#aaa;">8</div><div style="font-size:10px;color:#888;">黑屏</div></div>
+      </div>
+    </div></div>
+    <div class="info">
+      <div class="shot">ECU/CU 占比 46%</div>
+      <div class="desc">竖屏友好 · 浅景深优先 · 屏幕即角色</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  《容器》 · 2026 · AI Production Pipeline<br>
+  <span style="color:#222;">github.com/3436140351-create/container-series</span>
+</div>
+</body>
+</html>
