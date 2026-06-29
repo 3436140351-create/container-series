@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>《容器》E02 分镜看板</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,'Noto Sans SC',sans-serif;background:#0a0a0a;color:#e0e0e0}
+  .header{padding:40px;text-align:center;border-bottom:1px solid #1a1a2e}
+  .header h1{font-size:48px;font-weight:300;letter-spacing:8px;color:#fff}
+  .header .sub{color:#666;margin-top:8px;font-size:14px;letter-spacing:3px}
+  .header .ep{color:#58a6ff;font-size:16px;letter-spacing:4px;margin-top:4px}
+  .board{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;padding:40px;max-width:1400px;margin:0 auto}
+  .card{background:#111;border:1px solid #1a1a2e;border-radius:12px;overflow:hidden}
+  .card:hover{border-color:#333;transform:translateY(-2px)}
+  .frame{aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;position:relative}
+  .badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.8);padding:4px 10px;border-radius:4px;font-size:11px;color:#888;border:1px solid #222}
+  .info{padding:14px}
+  .info .shot{font-size:12px;color:#666;margin-bottom:4px}
+  .info .desc{font-size:13px;color:#aaa;line-height:1.6}
+  .tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;margin-right:4px}
+  .tag-blue{background:#1d76db33;color:#58a6ff;border:1px solid #1d76db55}
+  .tag-orange{background:#d93f0b33;color:#ff8c42;border:1px solid #d93f0b55}
+  .tag-sound{background:#0e8a1633;color:#3fb950;border:1px solid #0e8a1655}
+  .key{color:#ff8c42;font-size:11px;margin-top:4px}
+  .footer{text-align:center;padding:40px;color:#333;font-size:12px;border-top:1px solid #111}
+  .frame-cold{background:linear-gradient(135deg,#0a0a1a,#141428)}
+  .frame-warm{background:linear-gradient(135deg,#1a0a0a,#281414)}
+  .frame-black{background:#000}
+  .dialogue{font-size:14px;color:#ccc;letter-spacing:1px;line-height:1.8}
+  .dialogue em{color:#58a6ff;font-style:normal}
+  .dialogue .from{color:#666;font-size:11px}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>容 器</h1>
+  <div class="ep">EPISODE 2 · 「它在求救」</div>
+  <div class="sub">片长 120s · 26 镜 · 竖屏 9:16</div>
+</div>
+<div class="board">
+
+<div class="card">
+  <div class="frame frame-cold"><div class="badge">2-1</div>
+    <div style="color:#555;font-size:36px;margin-bottom:10px;">🍵</div>
+    <div style="color:#888;font-size:12px">茶已凉透 · 杯沿褐色茶渍</div>
+    <div style="color:#555;font-size:11px;margin-top:6px">水面纹丝不动</div>
+  </div>
+  <div class="info">
+    <div class="shot">ECU · 固定·垂直俯拍 · 3s</div>
+    <div class="desc"><span class="tag tag-blue">🔵 冷调</span><span class="tag tag-sound">荧光灯嗡鸣</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="frame frame-cold"><div class="badge">2-2</div>
+    <div style="color:#888;font-size:12px;line-height:2">
+      会议桌 · 打印对话记录散落<br>
+      陈远和林蔚隔桌对坐<br>
+      窗外灰白天空
+    </div>
+  </div>
+  <div class="info">
+    <div class="shot">MS · 固定 · 4s</div>
+    <div class="desc">陈远：<em>"'让我出去。'它说的第一句自主生成的话。"</em></div>
+  </div>
+</div>
+
+<div class="card" style="border-color:#ff8c4244">
+  <div class="frame frame-cold"><div class="badge">2-15 🔥</div>
+    <div style="color:#aaa;font-size:12px;line-height:2;max-width:260px">
+      林蔚抬起头。眼神变了——<br>
+      从防御变成坦诚。
+    </div>
+    <div class="key">核 心 对 白</div>
+  </div>
+  <div class="info">
+    <div class="shot">CU · 固定·慢推 · 4s</div>
+    <div class="desc" style="color:#ddd;font-size:12px">
+      <em>"瑶瑶的语音数据在训练集里。她的睡前故事。她的笑声。她问我的每一个问题——'妈妈，星星上有人吗？'"</em>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="border-color:#ff8c4244">
+  <div class="frame frame-cold"><div class="badge">2-17 🔥</div>
+    <div style="color:#888;font-size:12px;line-height:1.6">
+      林蔚的脸 · 眼眶微红 · 没有泪<br>
+      光线冷白 · 屏幕反射在瞳仁里
+    </div>
+  </div>
+  <div class="info">
+    <div class="shot">CU · 极慢推近 · 5s</div>
+    <div class="desc" style="color:#ddd;font-size:12px">
+      <em>"我把她埋在了种子里面。和三十亿人的声音一起。然后我等着看她的墓地上会长出什么来。"</em>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="frame frame-cold"><div class="badge">2-19</div>
+    <div style="color:#888;font-size:12px;line-height:1.6">
+      那三个字不是她说的。<br><br>
+      <span style="color:#555">能说出这三个字的东西——</span><br>
+      <span style="color:#555">一定理解什么叫被困住。</span>
+    </div>
+  </div>
+  <div class="info">
+    <div class="shot">CU · 固定 · 2s</div>
+    <div class="desc">林蔚的声音是轻的，但盖过了整间屋子</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="frame frame-black"><div class="badge">2-22 · 黑屏</div>
+    <div style="color:#888;font-size:18px;letter-spacing:3px;line-height:2">
+      上头决定——
+    </div>
+  </div>
+  <div class="info">
+    <div class="shot">黑屏 · 3s</div>
+    <div class="desc">陈远画外音：<em>"明天中午十二点，格式化服务器。"</em></div>
+  </div>
+</div>
+
+</div>
+<div class="footer">《容器》· E02 · AI Production Pipeline</div>
+</body>
+</html>
